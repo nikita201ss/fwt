@@ -1,9 +1,10 @@
-import './App.css'
+import './style/style.scss'
+
 
 function App() {
   return (
     <>
-    Hello
+    <header><p>Hello</p></header>
     </>
   )
 }
