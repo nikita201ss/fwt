@@ -1,24 +1,20 @@
 import axios from "axios";
-import type { AppDispatch } from "../store";
 import type { IAuthor } from "../../models/IAuthor";
-import { authorSlice } from "./AuthorsSlice";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
+export const fetchAuthors = createAsyncThunk<
+    IAuthor[],
+    void,
+    { rejectValue: string }
+>(
+    'author/fetchAll',
+    async (_, thunkAPI) => {
+        try {
+            const response = await axios.get<IAuthor[]>('https://test-front.framework.team/authors');
+            return response.data;
+        } catch (error) {
 
-
-
-export const fetchAuthors = () => async (dispatch: AppDispatch) => {
-
-    function getErrorMessage(error: unknown) {
-        if (error instanceof Error) return error.message
-        return String(error)
+            return thunkAPI.rejectWithValue('Не удалось загрузить авторов');
+        }
     }
-
-    try {
-        dispatch(authorSlice.actions.authorsFetching())
-        const response = await axios.get<IAuthor[]>('https://test-front.framework.team/authors')
-        dispatch(authorSlice.actions.authorsFetchingSuccess(response.data))
-    } catch (e) {
-        dispatch(authorSlice.actions.authorsFetchingError(getErrorMessage(e)))
-    }
-}
-
+);
