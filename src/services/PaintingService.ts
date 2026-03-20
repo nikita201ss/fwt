@@ -16,8 +16,17 @@ export const paintingAPI = createApi({
                     _limit: limit
                 }
             })
+        }),
+
+        searchPaintings: build.query<Ipainting[], string>({
+            query: (searchTerm) => ({
+                url: '/paintings',
+                params: {
+                    q: searchTerm
+                }
+            })
         })
     })
 })
 
-export const { useFetchAllPaintingsQuery } = paintingAPI;
+export const { useFetchAllPaintingsQuery, useSearchPaintingsQuery, useLazySearchPaintingsQuery } = paintingAPI;
