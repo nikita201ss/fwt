@@ -3,7 +3,7 @@
 // import { fetchAuthors } from './store/reducers/ActionCreators'
 import Header from './components/Header'
 import PaintingContainer from './components/PaintingContainer'
-import SearchPanel from './components/SearchPanel'
+
 import './style/style.scss'
 
 function App() {
@@ -22,7 +22,6 @@ function App() {
       {JSON.stringify(authors, null, 2)}
      */}
       <Header />
-      <SearchPanel />
 
       <PaintingContainer />
 
