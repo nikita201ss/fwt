@@ -34,11 +34,11 @@ const PaintingItem: FC<PaintingItemProps> = ({ painting }) => {
                 <div className="painting__txt">
                     <div className={`first-info ${isHovered ? 'first-info--hidden' : 'first-info--visible'}`}>
                         <h1>{painting.name}</h1>
-                        <p>{painting.created}</p>
+                        <p className='years'>{painting.created}</p>
                     </div>
                     <div className={`second-info ${isHovered ? 'second-info--visible' : 'second-info--hidden'}`}>
                         <h1>{author?.name || 'Автор не указан'}</h1>
-                        <p>{location?.location || 'Локация не указана'}</p>
+                        <p className='years'>{location?.location || 'Локация не указана'}</p>
                     </div>
                 </div>
             </div>
