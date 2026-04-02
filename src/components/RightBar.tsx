@@ -112,7 +112,7 @@ const RightBar: React.FC<RightBarProps> = ({ onClose, onApplyFilters }) => {
                             className="rightbar__toggle"
                             onClick={() => toggleSection('artist')}
                         >
-                            <img 
+                            <img className='change'
                                 src={openSections.artist ? minus : plus} 
                                 alt={openSections.artist ? "minus" : "plus"} 
                             />
@@ -140,7 +140,7 @@ const RightBar: React.FC<RightBarProps> = ({ onClose, onApplyFilters }) => {
                             className="rightbar__toggle"
                             onClick={() => toggleSection('location')}
                         >
-                            <img 
+                            <img className='change'
                                 src={openSections.location ? minus : plus} 
                                 alt={openSections.location ? "minus" : "plus"} 
                             />
@@ -168,7 +168,7 @@ const RightBar: React.FC<RightBarProps> = ({ onClose, onApplyFilters }) => {
                             className="rightbar__toggle"
                             onClick={() => toggleSection('years')}
                         >
-                            <img 
+                            <img className='change'
                                 src={openSections.years ? minus : plus} 
                                 alt={openSections.years ? "minus" : "plus"} 
                             />

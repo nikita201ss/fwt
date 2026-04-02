@@ -1,1 +1,23 @@
-/*# sourceMappingURL=constants.css.map */
+:root {
+  --primary-white: #FFFFFF;
+  --primary-black: #121212;
+  --primary-light-gray: #DEDEDE;
+  --primary-dark-gray: #575757;
+  --secondary-white: #FCFCFC;
+  --secondary-black: #1A1818;
+  --secondary-gray: #9C9C9C;
+  --accent-red: #9B4B4B;
+  --accent-gold: #AB8956;
+}
+
+[data-theme=dark] {
+  --primary-white: #121212;
+  --primary-black: #FFFFFF;
+  --primary-light-gray: #575757;
+  --primary-dark-gray: #DEDEDE;
+  --secondary-white: #1A1818;
+  --secondary-black: #FCFCFC;
+  --secondary-gray: #9C9C9C;
+  --accent-red: #AB8956;
+  --accent-gold: #9B4B4B;
+}/*# sourceMappingURL=constants.css.map */

@@ -44,7 +44,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         <>
             <div className='search__bar'>
                 <div className="search">
-                    <button className="search__button center" onClick={handleSearch}>
+                    <button className="search__button center change" onClick={handleSearch}>
                         <img src={search_icon} alt="search" />
                     </button>
                     <input
@@ -59,7 +59,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
                 <div className='filter center'>
                     <button className="filter__button" onClick={toggleRightBar}>
-                        <img src={filter_icon} alt="filter" />
+                        <img src={filter_icon} alt="filter" className='change'/>
                     </button>
                 </div>
             </div>

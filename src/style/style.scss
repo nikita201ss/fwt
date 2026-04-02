@@ -2,11 +2,14 @@
 @import "./constants/constants.scss";
 
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-white);
 }
 
 h1 {
@@ -14,17 +17,16 @@ h1 {
     font-family: 'CormorantSC-Medium';
     font-size: 16px;
     text-transform: uppercase;
+    color: var(--primary-black)
 }
 
 p {
     font-family: 'Inter-Light';
-
-
 }
 
 .years {
     font-family: 'Inter-Bold';
-    color: $accent-red;
+    color: var(--accent-red);
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
@@ -69,24 +71,25 @@ header {
         left: 7px;
         position: absolute;
         border: 0;
-        background-color: white;
+        background: none;
     }
 
     &__input {
         padding-left: 34px;
-        color: $primary-dark-gray;
+        color: var(--primary-dark-gray);
         width: 336px;
         border: 1px solid #DEDEDE;
         border-radius: 4px;
         height: 36px;
+        background-color: var(--primary-white);
     }
 
     &__input::placeholder {
-        color: $secondary-gray;
+        color: var(--secondary-gray);
     }
 
     &__input:focus {
-        border: 1px solid $primary-dark-gray;
+        border: 1px solid var(--primary-dark-gray);
         outline: none;
     }
 }
@@ -95,7 +98,7 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 100px;
-    background-color: $secondary-white;
+    background-color: var(--secondary-white);
 }
 
 
@@ -137,7 +140,7 @@ header {
     &__info {
         width: 300px;
         height: 82px;
-        background-color: $primary-white;
+        background-color: var(--primary-white);
         position: absolute;
         bottom: 0px;
         display: flex;
@@ -152,7 +155,7 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border-left: 2px solid #9B4B4B;
+        border-left: 2px solid var(--accent-red);
     }
 
     &:hover &__image {
@@ -196,13 +199,27 @@ header {
 
 
 .pag-block {
-    margin: 0 7px;
+    justify-content: center;
+    display: flex;
+    gap: 6%;
+    width: 100%;
 }
 
 .pagination {
+
+    margin: 0 auto;
+    width: 20%;
     display: flex;
     justify-content: center;
     gap: 5px;
+
+
+    &__block {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 2%;
+    }
 
     &__button {
         font-family: 'Inter-Light';
@@ -211,19 +228,19 @@ header {
         border: 0;
         width: 20px;
         height: 20px;
-        background-color: white;
+        background: none;
         font-size: 16px;
-        color: $primary-dark-gray;
+        color: var(--primary-dark-gray);
 
         &:hover:not(:disabled) {
-            border-bottom: 1px solid $secondary-gray;
+            border-bottom: 1px solid var(--secondary-gray);
 
 
         }
 
         &--active {
-            background-color: $primary-light-gray;
-            font-weight: medium;
+            background-color: var(--primary-light-gray);
+            font-weight: $medium;
             font-family: 'Inter-Medium';
         }
 
@@ -245,7 +262,7 @@ header {
 
     &__add {
 
-        color: $secondary-gray;
+        color: var(--secondary-gray);
     }
 }
 
@@ -253,7 +270,7 @@ header {
 
     width: 36px;
     height: 36px;
-    background-color: $secondary-white;
+    background-color: var(--secondary-white);
     border-radius: 4px;
 
     &__button {
@@ -271,7 +288,7 @@ header {
     right: 0;
     width: 492px;
     height: 100vh;
-    background: $secondary-white;
+    background: var(--secondary-white);
     z-index: 1;
     overflow-y: auto;
     animation: slideIn 0.3s ease;
@@ -308,7 +325,7 @@ header {
         flex-direction: column;
         gap: 28px;
         margin-bottom: 35px;
-        background-color: $secondary-white;
+        background-color: var(--secondary-white);
         position: relative;
         z-index: 2;
     }
@@ -346,10 +363,11 @@ header {
 
 
     &__input_select {
-        color: $secondary-gray;
+        background-color: var(--primary-white);
+        color: var(--secondary-gray);
         width: 100%;
         padding: 10px 12px;
-        border: 1px solid $primary-light-gray;
+        border: 1px solid var(--primary-light-gray);
         border-radius: 4px;
         font-size: 14px;
         transition: all 0.3s ease;
@@ -364,11 +382,12 @@ header {
 
 
     &__input {
+        background-color: var(--primary-white);
         text-align: center;
-        color: $secondary-gray;
+        color: var(--secondary-gray);
         width: 18%;
         padding: 10px 12px;
-        border: 1px solid $primary-light-gray;
+        border: 1px solid var(--primary-light-gray);
         border-radius: 4px;
         font-size: 14px;
         transition: all 0.3s ease;
@@ -394,7 +413,7 @@ header {
         text-transform: uppercase;
         background: none;
         border: none;
-        color: $primary-dark-gray;
+        color: var(--primary-dark-gray);
         font-size: 12px;
         font-weight: bold;
         cursor: pointer;
@@ -406,7 +425,7 @@ header {
         border: none;
         text-transform: uppercase;
         background: none;
-        color: $secondary-gray;
+        color: var(--secondary-gray);
         font-size: 12px;
         cursor: pointer;
         font-weight: bold;
@@ -457,26 +476,91 @@ header {
         margin-top: 13px;
         height: 264px;
         overflow: auto;
-        background-color: $secondary-white;
+        background-color: var(--secondary-white);
 
         &::-webkit-scrollbar-button:vertical {
-  display: none;
-}
+            display: none;
+        }
     }
 
     &__option {
         font-size: 14px;
-        color: $primary-dark-gray;
+        color: var(--primary-dark-gray);
         height: 36px;
         cursor: pointer;
         display: flex;
         align-items: center;
         padding-left: 17px;
-        
+
         &:hover {
             background-color: rgba(18, 18, 18, 0.05);
         }
     }
 
-    &_txt {}
+}
+
+.theme-toggle {
+    border: 0;
+    background: none;
+}
+
+
+
+
+.change {
+    filter: var(--icon-filter);
+}
+
+:root {
+    --icon-filter: brightness(0) invert(0);
+}
+
+[data-theme="dark"] {
+    --icon-filter: brightness(0) invert(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    
 }

@@ -5,6 +5,7 @@ import Header from './components/Header'
 import PaintingContainer from './components/PaintingContainer'
 
 import './style/style.scss'
+import './style/constants/constants.css'
 
 function App() {
   // const dispatch = useAppDispatch()
