@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import Pagination from './Pagination';
 import { useState } from 'react';
 import type { Ipainting } from '../models/IPainting';
-import type { FiltersState } from '../types/filters'; 
+import type { FiltersState } from '../types/filters';
 
 const PaintingContainer = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -60,13 +60,15 @@ const PaintingContainer = () => {
                 isLoading={isLoading}
             />
 
+            <div className='notRes'>
+                {hasNoResults && <p>No matches for <span className='notRes__search'>{searchQuery}</span><br/><br/></p>}
+                {hasNoResults && <p className='notRes__add'>Please try again with a different spelling or keywords.</p>}
+            </div>
+
             <div className="painting__list">
                 {isLoading && <h2>Loading...</h2>}
                 {error && <h2>Error occurred</h2>}
-                <div className='notRes'>
-                    {hasNoResults && <p>No matches for <span className='notRes__search'>{searchQuery}</span></p>}
-                    {hasNoResults && <p className='notRes__add'>Please try again with a different spelling or keywords.</p>}
-                </div>
+
                 {!isLoading && !error && paintings.length > 0 && (
                     <>
                         {paintings.map((painting: Ipainting) => (

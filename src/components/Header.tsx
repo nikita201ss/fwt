@@ -1,5 +1,5 @@
 // import React from 'react';
-import logo from '../style/static/img/logo.svg'
+import logo from '../style/static/img/logo.svg';
 import ThemeToggle from './ThemeToggle.tsx';
 
 

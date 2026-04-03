@@ -1,5 +1,5 @@
-@import "./fonts.scss";
-@import "./constants/constants.scss";
+@use "./fonts.scss" as *;
+@use "./constants/constants.scss" as *;
 
 
 * {
@@ -138,8 +138,9 @@ header {
     }
 
     &__info {
-        width: 300px;
-        height: 82px;
+        justify-content: space-between;
+        width: 85%;
+        height: 25%;
         background-color: var(--primary-white);
         position: absolute;
         bottom: 0px;
@@ -149,7 +150,6 @@ header {
 
     &__txt {
         overflow: hidden;
-        line-height: 1.7;
         padding-left: 18px;
         margin: auto 0;
         display: flex;
@@ -161,6 +161,13 @@ header {
     &:hover &__image {
         transform: scale(1.1);
     }
+
+}
+
+.dop-arrow {
+    visibility: hidden;
+    width: 24px;
+    background-color: var(--accent-red);
 }
 
 .first-info {
@@ -218,7 +225,6 @@ header {
         justify-content: center;
         width: 100%;
         display: flex;
-        gap: 2%;
     }
 
     &__button {
@@ -252,8 +258,11 @@ header {
 
 
 .notRes {
+    width: 30%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 25px auto 0 auto;
 
 
     &__search {
@@ -560,7 +569,108 @@ header {
 
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
-    
+    header {
+        padding: 0 50px;
+    }
+
+    .dop-arrow {
+        visibility: visible;
+    }
+
+    .painting {
+        width: 352px;
+        height: 220px;
+
+        &__list {
+            width: 95%;
+        }
+
+        &__info {
+            width: 90%;
+        }
+
+        &__txt {
+            border-left: none;
+        }
+
+    }
+
+
+
+    .search__input {
+        width: 300px;
+    }
+
+
+    .rightbar {
+        width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .rightbar {
+        width: 372px;
+    }
+
+    .pagination {
+        width: 40%;
+    }
+
+}
+
+
+@media screen and (max-width: 425px) {
+
+
+    .notRes {
+        width: 70%;
+    }
+
+    header {
+        padding: 0 25px;
+    }
+
+    h1 {
+        font-size: 12px;
+    }
+
+    .years {
+        font-size: 8px;
+    }
+
+    .painting {
+        width: 280px;
+        height: 185px;
+
+        &__list {
+            width: 98%;
+        }
+
+    }
+
+    .search {
+
+
+
+        &__input {
+            width: 225px;
+        }
+
+        &__bar {
+            justify-content: center;
+            width: 100%;
+        }
+
+    }
+
+    .pagination {
+        width: 60%;
+    }
+
+
+
+
 }

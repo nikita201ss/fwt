@@ -2,6 +2,7 @@ import { type FC, useState } from 'react';
 import type { Ipainting } from '../models/IPainting';
 import { useFetchAllAuthorsQuery } from '../services/AuthorService';
 import { useFetchAllLocationsQuery } from '../services/LocationService';
+import arrow from '../style/static/icon/arrow_icon.svg';
 
 interface PaintingItemProps {
     painting: Ipainting;
@@ -40,6 +41,11 @@ const PaintingItem: FC<PaintingItemProps> = ({ painting }) => {
                         <h1>{author?.name || 'Автор не указан'}</h1>
                         <p className='years'>{location?.location || 'Локация не указана'}</p>
                     </div>
+
+                </div>
+
+                <div className='dop-arrow center'>
+                    <img src={arrow} alt="arrow" className='painting__arrow' />
                 </div>
             </div>
         </div>
