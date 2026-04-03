@@ -606,6 +606,18 @@ header {
 
     .rightbar {
         width: 400px;
+
+        &__section {
+            padding: 0 20px 0 30px;
+        }
+
+        &__header {
+            padding: 20px 10px 0 0;
+        }
+
+        &__footer {
+            padding: 0px 20px 10vh 30px;
+        }
     }
 
 }
@@ -648,7 +660,9 @@ header {
         &__list {
             width: 98%;
         }
-
+    }
+        .rightbar {
+        width: 280px;
     }
 
     .search {
